@@ -29,11 +29,13 @@
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 999px;
-  border: 1px solid #ccc;
-  background: #fff;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
   cursor: pointer;
   white-space: nowrap;
 }
+
 
 .main {
   flex: 1;

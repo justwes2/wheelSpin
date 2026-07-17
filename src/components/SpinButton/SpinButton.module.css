@@ -4,13 +4,14 @@
   padding: 14px 32px;
   border-radius: 999px;
   border: none;
-  background: #277da1;
-  color: #fff;
+  background: var(--accent);
+  color: var(--accent-text);
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(39, 125, 161, 0.4);
   transition: transform 0.1s ease, opacity 0.2s ease;
   touch-action: manipulation;
 }
+
 
 .spinButton:active:not(:disabled) {
   transform: scale(0.97);

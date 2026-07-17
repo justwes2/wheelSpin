@@ -13,8 +13,9 @@
 }
 
 .wheelBackground {
-  fill: #fff;
+  fill: var(--surface);
 }
+
 
 .sliceLabel {
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -26,9 +27,19 @@
   user-select: none;
 }
 
+.outsideLabel {
+  fill: var(--text);
+  stroke: none;
+}
+
+.leaderLine {
+  stroke: var(--leader-line);
+}
+
+
 .hub {
-  fill: #ffffff;
-  stroke: #333;
+  fill: var(--surface);
+  stroke: var(--text);
   stroke-width: 2;
 }
 
@@ -41,7 +52,8 @@
   height: 0;
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
-  border-top: 24px solid #1a1a1f;
+  border-top: 24px solid var(--pointer-color);
   z-index: 5;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
 }
+

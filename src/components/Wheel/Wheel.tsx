@@ -3,10 +3,12 @@ import {
   describeArcPath,
   polarToCartesian,
   getLabelFontSize,
+  getRadialLabelRotation,
   OUTSIDE_LABEL_ANGLE_THRESHOLD,
   MIN_LABEL_FONT_SIZE,
 } from '../../utils/wheelMath'
 import styles from './Wheel.module.css'
+
 
 interface WheelProps {
   slices: RenderedSlice[]
@@ -80,7 +82,7 @@ export function Wheel({ slices, rotation, spinning, onTransitionEnd }: WheelProp
                   y1={edgePos.y}
                   x2={labelPos.x}
                   y2={labelPos.y}
-                  stroke="#4a4a4a"
+                  className={styles.leaderLine}
                   strokeWidth={1}
                 />
               )}
@@ -90,11 +92,22 @@ export function Wheel({ slices, rotation, spinning, onTransitionEnd }: WheelProp
                 fontSize={fontSize}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fill={isOutside ? '#1a1a1f' : '#ffffff'}
-                className={styles.sliceLabel}
+                transform={
+                  isOutside
+                    ? undefined
+                    : `rotate(${getRadialLabelRotation(slice.midAngle)}, ${labelPos.x}, ${labelPos.y})`
+                }
+                fill={isOutside ? undefined : '#ffffff'}
+
+                className={
+                  isOutside
+                    ? `${styles.sliceLabel} ${styles.outsideLabel}`
+                    : styles.sliceLabel
+                }
               >
                 {slice.label}
               </text>
+
             </g>
           )
         })}

@@ -110,7 +110,21 @@ export function getLabelFontSize(angle: number): number {
 }
 
 /**
+ * Computes the SVG `rotate()` angle (degrees) to apply to a slice's label so
+ * that it reads radially, from the center of the wheel outward, at the given
+ * mid-angle (degrees, clockwise from 12 o'clock). This intentionally does
+ * not "flip" labels on the lower half of the wheel to keep them upright -
+ * consistent with how real prize wheels typically orient radial labels
+ * (they read center-to-edge all the way around, appearing upside-down on
+ * the bottom half, which is expected/normal for this style).
+ */
+export function getRadialLabelRotation(midAngle: number): number {
+  return midAngle - 90
+}
+
+/**
  * Given a target angle (degrees, clockwise from 12 o'clock) that the pointer
+
  * should land on, and the wheel's current visual rotation, computes the final
  * `rotate()` transform angle (degrees) to animate to. Adds `extraSpins` full
  * rotations for visual effect, and lands so the pointer (fixed at 0deg / 12
