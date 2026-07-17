@@ -25,7 +25,10 @@ This file tracks implementation progress across sessions, plus notes on out-of-s
 - [x] Fix legend button invisible/low-contrast text (explicit theme-aware `color`/`background` on `.legendButton`)
 - [x] Radially-oriented in-slice labels (read from center of wheel outward); outside/leader-line labels remain horizontal for readability
 
+- [x] Fix modal overflow on narrow/mobile screens (modal was overflowing the right edge of the viewport)
+
 ## Deferred / Out of Scope (for now)
+
 
 - [ ] Add automated tests (Vitest) for `weightedRandom.ts` and `wheelMath.ts` - planned for **after** the prototype is deployed and stable
 - [ ] In-app editor for slices (explicitly out of scope per requirements - slices are build-time/developer-maintained JSON)
@@ -44,3 +47,6 @@ This file tracks implementation progress across sessions, plus notes on out-of-s
   - Added dark mode: introduced CSS custom properties (`--bg`, `--surface`, `--text`, `--text-muted`, `--border`, `--accent`, `--accent-text`, `--pointer-color`, `--backdrop`, `--shadow`, `--leader-line`) in `src/index.css`, with light defaults on `:root` and dark overrides inside `@media (prefers-color-scheme: dark)`. All component CSS modules updated to reference these variables instead of hardcoded hex colors. Slice palette colors themselves are unchanged in both themes (they're meant to stay vivid).
   - Fixed low/zero-contrast legend button text: root cause was `color-scheme: light dark` combined with no explicit `color` on `.legendButton`, causing the button to inherit browser dark-mode UA defaults (white-on-white in some browsers). Fixed by giving the button explicit theme-aware `color: var(--text)` and `background: var(--surface)`.
   - Added radial label orientation: added `getRadialLabelRotation()` to `wheelMath.ts` (rotates label by `midAngle - 90` degrees) and applied it as an SVG `rotate()` transform on in-slice `<text>` elements in `Wheel.tsx`, so labels read from the center of the wheel outward. Outside/leader-line labels (for very narrow slices) intentionally remain horizontal for readability.
+- 2026-07-17: Added `.clinerules` at repo root codifying the "don't run git write commands" workflow rule and the status-doc update habit, so this persists automatically across future sessions without needing to be re-stated.
+- 2026-07-17: Fixed modal overflowing the right edge of the viewport on narrow/mobile screens. Root cause: `.modal` was a flex child of `.backdrop` (a `display:flex` container) with `width: 100%`, but flex items default to `min-width: auto`, so if any inner content (long label text, etc.) had a wider intrinsic width, the modal couldn't shrink below it and got pushed past the screen edge. Fixed by setting `width: min(92vw, 360px)` (viewport-relative sizing independent of flex-shrink quirks), `min-width: 0`, `box-sizing: border-box`, `overflow-x: hidden` on `.modal`, plus `overflow-wrap: anywhere` on text content in `Modal`, `LegendModal`, and `ResultModal` so long slice labels wrap instead of forcing width.
+

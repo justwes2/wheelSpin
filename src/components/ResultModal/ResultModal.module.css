@@ -20,7 +20,9 @@
   font-size: 22px;
   font-weight: 700;
   margin: 0;
+  overflow-wrap: anywhere;
 }
+
 
 .okButton {
   margin-top: 4px;

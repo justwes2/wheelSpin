@@ -15,13 +15,16 @@
   color: var(--text);
   border-radius: 16px;
   padding: 24px 20px;
-  width: 100%;
-  max-width: 360px;
+  box-sizing: border-box;
+  width: min(92vw, 360px);
+  min-width: 0;
   max-height: 85svh;
+  overflow-x: hidden;
   overflow-y: auto;
   box-shadow: 0 20px 40px var(--shadow);
   animation: pop-in 0.18s ease-out;
 }
+
 
 
 @keyframes pop-in {
@@ -60,4 +63,7 @@
 
 .content {
   font-size: 16px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
+

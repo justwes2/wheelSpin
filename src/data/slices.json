@@ -1,7 +1,15 @@
 {
   "slices": [
-    { "label": "apples", "weight": 25 },
-    { "label": "bananas", "weight": 25 },
-    { "label": "pears", "weight": 50 }
+    { "label": "W Gets a High Five", "weight": 10 },
+    { "label": "Ban -2 wks", "weight": 20 },
+    { "label": "Ban -4 wks", "weight": 15 },
+    { "label": "Ban -6 wks", "weight": 10 },
+    { "label": "W Planks to Failure", "weight": 5 },
+    { "label": "W Pullups to Failure", "weight": 5 },
+    { "label": "W on Good Behavior", "weight": 5 },
+    { "label": "Crop top workout", "weight": 10 },
+    { "label": "-1\" on Crop", "weight": 5 },
+    { "label": "G Demos Core Routine", "weight": 5 },
+    { "label": "G Shirtless Workout", "weight": 1 }
   ]
 }

@@ -22,8 +22,11 @@
 
 .label {
   flex: 1;
+  min-width: 0;
   text-transform: capitalize;
+  overflow-wrap: anywhere;
 }
+
 
 .percentage {
   font-weight: 700;

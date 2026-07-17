@@ -1,0 +1,13 @@
+# Project Rules for wheelSpin
+
+## Git workflow
+- Do NOT run `git add`, `git commit`, `git push`, or any other git write operations.
+- It is fine to run read-only git commands (e.g. `git status`, `git diff`, `git log`) to inspect state.
+- After making code changes, verify locally (e.g. `npm run build`, `npm run lint`) and let the user
+  know the changes are ready. The user will review, stage, commit, and push themselves.
+
+## Status tracking
+- Keep `docs/status.md` up to date after meaningful chunks of work: check off completed items,
+  add new items as they're discovered, and log notable decisions in the "Notes / Decisions Log"
+  section with a date.
+- See `docs/project-plan.md` for the original requirements/plan.
