@@ -1,0 +1,47 @@
+{
+    "name": "simple react static app container",
+    "image": "node:22",
+
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {
+            "version": "latest"
+        }
+    },
+
+    "customizations": {
+        "vscode": {
+            
+            "extensions": [
+                // Typescript / React
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "bradlc.vscode-tailwindcss",
+                "ms-vscode.vscode-typescript-next",
+                "dsznajder.es7-react-js-snippets",
+
+                // Git
+                "eamodio.gitlens",
+
+                // Devtools
+                "saoudrizwan.claude-dev"
+            ]
+        }
+    },
+
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
+
+    "forwardPorts": [
+        5173
+    ],
+
+    "portsAttributes": {
+        "5173": {
+            "label": "Vite Dev Server",
+            "onAutoForward": "notify"
+        }
+    }
+}
+

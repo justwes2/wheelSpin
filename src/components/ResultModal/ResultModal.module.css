@@ -1,0 +1,34 @@
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.winnerLabel {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.okButton {
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: none;
+  background: #277da1;
+  color: #fff;
+  cursor: pointer;
+}

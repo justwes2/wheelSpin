@@ -1,0 +1,7 @@
+{
+  "slices": [
+    { "label": "apples", "weight": 25 },
+    { "label": "bananas", "weight": 25 },
+    { "label": "pears", "weight": 50 }
+  ]
+}
